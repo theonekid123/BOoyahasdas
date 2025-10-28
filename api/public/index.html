@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+  <head><meta charset="utf-8"><title>Proxy</title></head>
+  <body style="font-family:system-ui">
+    <form id="f">
+      <input id="u" style="width:70%" placeholder="https://example.com or search terms"/>
+      <button>Go</button>
+    </form>
+    <script>
+      document.getElementById('f').addEventListener('submit', e=>{
+        e.preventDefault();
+        const val = document.getElementById('u').value.trim();
+        if (!val) return;
+        let url = val;
+        if (!/^https?:\/\//i.test(val)) {
+          // treat as google search
+          url = 'https://www.google.com/search?q=' + encodeURIComponent(val);
+        }
+        window.location = '/api/proxy?url=' + encodeURIComponent(url);
+      });
+    </script>
+  </body>
+</html>
