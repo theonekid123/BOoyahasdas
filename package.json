@@ -1,0 +1,9 @@
+{
+  "name": "vercel-scramjet-proxy",
+  "version": "1.0.0",
+  "type": "module",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.12",
+    "scramjet": "^4.29.1"
+  }
+}
